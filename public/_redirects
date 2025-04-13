@@ -1,0 +1,2 @@
+# This file ensures proper redirects for React Router in Netlify
+/* /index.html 200

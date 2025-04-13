@@ -1,0 +1,194 @@
+<!-- Current Costs Page Mockup -->
+<div class="min-h-screen bg-gray-50 flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center">
+        <div class="w-10 h-10 bg-blue-600 rounded-md flex items-center justify-center">
+          <span class="text-white font-bold">FS</span>
+        </div>
+        <h1 class="ml-3 text-2xl font-bold text-gray-900">Fleet Services ROI Calculator</h1>
+      </div>
+      <div>
+        <button class="text-blue-600 hover:text-blue-800 font-medium">Help</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Progress Bar -->
+  <div class="bg-white shadow-sm border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
+      <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 40%"></div>
+      </div>
+      <div class="flex justify-between mt-2 text-sm text-gray-600">
+        <div>Fleet Composition</div>
+        <div class="font-medium">Current Costs</div>
+        <div>Service Options</div>
+        <div>Assumptions</div>
+        <div>Results</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      <!-- Current Costs Card -->
+      <div class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Current Fleet Costs</h2>
+        <p class="text-gray-700 mb-8">
+          Please provide information about your current fleet operational costs. This will help us calculate potential savings based on your specific situation.
+        </p>
+
+        <!-- Maintenance Costs -->
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-900 mb-4">Maintenance Costs</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="maintenance-cost" class="block text-sm font-medium text-gray-700 mb-1">
+                Annual Maintenance Cost Per Vehicle
+                <span class="ml-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 cursor-help" title="Include regular maintenance, repairs, and parts replacement">
+                  ?
+                </span>
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">$</span>
+                </div>
+                <input type="number" name="maintenance-cost" id="maintenance-cost" class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0.00" value="2500">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">/year</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fuel Costs -->
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-900 mb-4">Fuel Costs</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="fuel-consumption" class="block text-sm font-medium text-gray-700 mb-1">
+                Average Fuel Consumption
+                <span class="ml-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 cursor-help" title="Average miles per gallon across your fleet">
+                  ?
+                </span>
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="number" name="fuel-consumption" id="fuel-consumption" class="focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0" value="22">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">MPG</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="fuel-price" class="block text-sm font-medium text-gray-700 mb-1">
+                Average Fuel Price
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">$</span>
+                </div>
+                <input type="number" name="fuel-price" id="fuel-price" class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0.00" step="0.01" value="3.85">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">/gal</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="annual-mileage" class="block text-sm font-medium text-gray-700 mb-1">
+                Average Annual Mileage Per Vehicle
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="number" name="annual-mileage" id="annual-mileage" class="focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0" value="25000">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">miles/year</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Labor Costs -->
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-900 mb-4">Labor Costs</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="driver-rate" class="block text-sm font-medium text-gray-700 mb-1">
+                Driver/Operator Hourly Rate
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">$</span>
+                </div>
+                <input type="number" name="driver-rate" id="driver-rate" class="focus:ring-blue-500 focus:border-blue-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0.00" step="0.01" value="25.50">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">/hour</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Downtime and Lifespan -->
+        <div class="mb-6">
+          <h3 class="text-lg font-medium text-gray-900 mb-4">Downtime and Lifespan</h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label for="downtime-percentage" class="block text-sm font-medium text-gray-700 mb-1">
+                Current Vehicle Downtime
+                <span class="ml-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 cursor-help" title="Percentage of time vehicles are unavailable due to maintenance or repairs">
+                  ?
+                </span>
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="number" name="downtime-percentage" id="downtime-percentage" class="focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0" min="0" max="100" value="8">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">%</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <label for="vehicle-lifespan" class="block text-sm font-medium text-gray-700 mb-1">
+                Average Vehicle Lifespan
+              </label>
+              <div class="mt-1 relative rounded-md shadow-sm">
+                <input type="number" name="vehicle-lifespan" id="vehicle-lifespan" class="focus:ring-blue-500 focus:border-blue-500 block w-full pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0" value="7">
+                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                  <span class="text-gray-500 sm:text-sm">years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-8">
+          <button class="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 bg-white hover:bg-gray-50 rounded-md text-sm font-medium">
+            <svg class="h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+            </svg>
+            Back
+          </button>
+          <button class="inline-flex items-center px-4 py-2 border border-transparent text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm font-medium">
+            Next
+            <svg class="h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+      <p class="text-center text-gray-500 text-sm">
+        &copy; 2025 Fleet Services. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</div>
